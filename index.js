@@ -16,7 +16,7 @@ const eraserDiv = document.querySelector('#raiser')
 let size = 16
 let type = 'default'
 
-paintDiv.addEventListener('click', () => {type = 'default'})
+paintDiv.addEventListener('click', () => {type = 'default'; select(paintDiv)})
 
 resetDiv.addEventListener('click', () => {
     container.innerHTML = ''
@@ -33,9 +33,9 @@ scaleInp.addEventListener('change', (e) => {
     getCols()
 })
 
-raibowDiv.addEventListener('click', () => {type = 'random'})
+raibowDiv.addEventListener('click', () => {type = 'random'; select(raibowDiv)})
 
-eraserDiv.addEventListener('click', () => {type = 'erase'})
+eraserDiv.addEventListener('click', () => {type = 'erase'; select(eraserDiv)})
 
 const renderDivs = (scale) => {
     //Create 16 rows
@@ -77,4 +77,12 @@ const changeBackgorundColor = (e) => {
     else{
         e.target.style['background-color'] = 'rgb(255,255,255)'
     }
+}
+
+const select = (node) => {
+    document.querySelectorAll('.option').forEach((option) => {
+        option.style.border = '5px solid black'
+    })
+    
+    node.style.border = '5px solid greenyellow'
 }
