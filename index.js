@@ -1,7 +1,7 @@
 //When load page
 document.addEventListener('DOMContentLoaded',() => {
     //First render divs
-    renderDivs()
+    renderDivs(16)
     //Then add event listener to the divs
     getCols()
 })
@@ -18,7 +18,7 @@ paintDiv.addEventListener('click', () => {changeColor()})
 
 resetDiv.addEventListener('click', () => {
     container.innerHTML = ''
-    renderDivs()
+    renderDivs(size)
     getCols()
 })
 
@@ -26,19 +26,22 @@ scaleInp.addEventListener('change', (e) => {
     const scaleN = document.querySelector('#scaleNumber')
     size = e.target.value
     scaleN.textContent = `${size}x${size}`
+    container.innerHTML = ''
+    renderDivs(size)
+    getCols()
 })
 
-const renderDivs = () => {
+const renderDivs = (scale) => {
     //Create 16 rows
-    for (let i = 0; i<16; i++){
+    for (let i = 0; i<scale; i++){
         const row = document.createElement('div')
         row.classList.add('row')
-        row.style.height = 500/16
+        row.style.height = 500/scale
         //Create 16 divs in each row
-        for (let i = 0; i<16; i++){
+        for (let i = 0; i<scale; i++){
             const col = document.createElement('div')
             col.classList.add('col')
-            col.style.width = 500/16
+            col.style.width = 500/scale
             //Add the div to the row
             row.appendChild(col)
         }
