@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded',() => {
     getCols()
 })
 
+//Crates const with elements in index.html
 const container = document.querySelector('#sketchContainer')
 const paintDiv = document.querySelector('#paint')
 const resetDiv = document.querySelector('#reset')
@@ -13,28 +14,37 @@ const scaleInp = document.querySelector('#scaleInput')
 const raibowDiv = document.querySelector('#rainbow')
 const eraserDiv = document.querySelector('#raiser')
 
+//Set size and type
 let size = 16
 let type = 'default'
 
+//Paint div event listener
 paintDiv.addEventListener('click', () => {type = 'default'; select(paintDiv)})
 
+//Reset div event listener
 resetDiv.addEventListener('click', () => {
+    //Set conatiner to ''
     container.innerHTML = ''
+    //Render divs and get cols again with current size
     renderDivs(size)
     getCols()
 })
 
+//Scale input div event listener
 scaleInp.addEventListener('change', (e) => {
     const scaleN = document.querySelector('#scaleNumber')
-    size = e.target.value
-    scaleN.textContent = `${size}x${size}`
-    container.innerHTML = ''
+    size = e.target.value //Change variable size according to input value
+    scaleN.textContent = `${size}x${size}` //Change p to current size
+    container.innerHTML = '' //Set container to ''
+    //Render divs and get cols again but with the new size
     renderDivs(size)
     getCols()
 })
 
+//Rainbow div event listener
 raibowDiv.addEventListener('click', () => {type = 'random'; select(raibowDiv)})
 
+//Eraser div event listener
 eraserDiv.addEventListener('click', () => {type = 'erase'; select(eraserDiv)})
 
 const renderDivs = (scale) => {
@@ -79,6 +89,7 @@ const changeBackgorundColor = (e) => {
     }
 }
 
+//Change border when option is selected
 const select = (node) => {
     document.querySelectorAll('.option').forEach((option) => {
         option.style.border = '5px solid black'
