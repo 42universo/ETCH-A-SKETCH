@@ -1,14 +1,44 @@
-const conatiner = document.querySelector('#sketchContainer')
+//When load page
+document.addEventListener('DOMContentLoaded',() => {
+    //First render divs
+    renderDivs()
+    //Then add event listener to the divs
+    getCols()
+})
 
-for (let i = 0; i<16; i++){
-    const row = document.createElement('div')
-    row.classList.add('row')
-    row.style.height = 500/16
+const container = document.querySelector('#sketchContainer')
+let color = [0, 0, 0]
+
+const renderDivs = () => {
+    //Create 16 rows
     for (let i = 0; i<16; i++){
-        const col = document.createElement('div')
-        col.classList.add('col')
-        col.style.width = 500/16
-        row.appendChild(col)
+        const row = document.createElement('div')
+        row.classList.add('row')
+        row.style.height = 500/16
+        //Create 16 divs in each row
+        for (let i = 0; i<16; i++){
+            const col = document.createElement('div')
+            col.classList.add('col')
+            col.style.width = 500/16
+            //Add the div to the row
+            row.appendChild(col)
+        }
+        //Add the row to the conatiner
+        container.appendChild(row)
     }
-    conatiner.appendChild(row)
+}   
+
+//Create event listener to each div
+const getCols = () => {
+    const cols = document.querySelectorAll('.col')
+    cols.forEach(col => {
+        col.addEventListener('mouseover', (evt) => changeBackgorundColor(evt))
+    })
+}
+
+
+
+//Change the background color depending on the let color value
+const changeBackgorundColor = (e) => {
+    e.target.style['background-color'] = `rgb(${color[0]},${color[1]},${color[2]})`
 }
