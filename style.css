@@ -3,7 +3,7 @@ h1{
 }
 
 #sketchContainer{
-    border: 1px solid black;
+    border: 1px solid red;
     width: 500px;
     height: 500px;
     margin: auto;
@@ -12,10 +12,10 @@ h1{
 }
 
 .row{
-    border: 1px solid black;
+    border: 1px solid gainsboro;
     display: flex;
 }
 
 .col{
-    border: 1px solid black;
+    border: 1px solid gainsboro;
 }
