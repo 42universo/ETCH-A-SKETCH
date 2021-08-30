@@ -11,6 +11,7 @@ const paintDiv = document.querySelector('#paint')
 const resetDiv = document.querySelector('#reset')
 const scaleInp = document.querySelector('#scaleInput')
 const raibowDiv = document.querySelector('#rainbow')
+const eraserDiv = document.querySelector('#raiser')
 
 let size = 16
 let type = 'default'
@@ -33,6 +34,8 @@ scaleInp.addEventListener('change', (e) => {
 })
 
 raibowDiv.addEventListener('click', () => {type = 'random'})
+
+eraserDiv.addEventListener('click', () => {type = 'erase'})
 
 const renderDivs = (scale) => {
     //Create 16 rows
@@ -68,7 +71,10 @@ const changeBackgorundColor = (e) => {
     if (type === 'default') {
         e.target.style['background-color'] = 'rgb(0,0,0)'
     }
+    else if (type === 'random'){
+        e.target.style['background-color'] = `rgb(${Math.floor(Math.random() * 255)},${Math.floor(Math.random() * 255)},${Math.floor(Math.random() * 255)})`
+    }
     else{
-        e.target.style['background-color'] = `rgb(${Math.floor(Math.random() * 250)},${Math.floor(Math.random() * 250)},${Math.floor(Math.random() * 250)})`
+        e.target.style['background-color'] = 'rgb(255,255,255)'
     }
 }
