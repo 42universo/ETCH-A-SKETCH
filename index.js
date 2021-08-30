@@ -7,7 +7,18 @@ document.addEventListener('DOMContentLoaded',() => {
 })
 
 const container = document.querySelector('#sketchContainer')
+const paintDiv = document.querySelector('#paint')
+const resetDiv = document.querySelector('#reset')
+
 let color = [0, 0, 0]
+
+paintDiv.addEventListener('click', () => {changeColor()})
+
+resetDiv.addEventListener('click', () => {
+    container.innerHTML = ''
+    renderDivs()
+    getCols()
+})
 
 const renderDivs = () => {
     //Create 16 rows
@@ -41,4 +52,8 @@ const getCols = () => {
 //Change the background color depending on the let color value
 const changeBackgorundColor = (e) => {
     e.target.style['background-color'] = `rgb(${color[0]},${color[1]},${color[2]})`
+}
+
+const changeColor = () => {
+    color = [0, 0, 0]
 }
