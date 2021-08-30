@@ -12,13 +12,9 @@ h1{
 }
 
 .row{
-    border: 1px solid gainsboro;
     display: flex;
 }
 
-.col{
-    border: 1px solid gainsboro;
-}
 
 #symbolsContainer{
     display: flex;
@@ -57,14 +53,14 @@ h1{
     font-size: 20px;
 }
 
-#rainbow{
+#rainbow, #raiser{
     height: 50px;
     width: 50px;
     border: 5px solid black;
     border-radius: 50px;
 }
 
-#raibowImg{
+#raibowImg, #eraserImg{
     height: 50px;
     width: 50px;
     object-fit: cover;
