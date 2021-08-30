@@ -3,8 +3,19 @@ h1{
 }
 
 #sketchContainer{
-    border: 5px solid black;
+    border: 1px solid black;
     width: 500px;
     height: 500px;
     margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.row{
+    border: 1px solid black;
+    display: flex;
+}
+
+.col{
+    border: 1px solid black;
 }
