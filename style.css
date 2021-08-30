@@ -1,0 +1,10 @@
+h1{
+    text-align: center;
+}
+
+#sketchContainer{
+    border: 5px solid black;
+    width: 500px;
+    height: 500px;
+    margin: auto;
+}
