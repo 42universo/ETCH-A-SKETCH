@@ -19,3 +19,26 @@ h1{
 .col{
     border: 1px solid gainsboro;
 }
+
+#symbolsContainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 30px;
+}
+
+#paint{
+    height: 50px;
+    width: 50px;
+    background-color: black;
+    border: 5px solid black;
+    border-radius: 50px;
+}
+
+#reset{
+    height: 50px;
+    width: 50px;
+    background-color: white;
+    border: 5px solid black;
+    border-radius: 50px;
+}
