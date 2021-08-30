@@ -9,8 +9,10 @@ document.addEventListener('DOMContentLoaded',() => {
 const container = document.querySelector('#sketchContainer')
 const paintDiv = document.querySelector('#paint')
 const resetDiv = document.querySelector('#reset')
+const scaleInp = document.querySelector('#scaleInput')
 
 let color = [0, 0, 0]
+let size = 16
 
 paintDiv.addEventListener('click', () => {changeColor()})
 
@@ -18,6 +20,12 @@ resetDiv.addEventListener('click', () => {
     container.innerHTML = ''
     renderDivs()
     getCols()
+})
+
+scaleInp.addEventListener('change', (e) => {
+    const scaleN = document.querySelector('#scaleNumber')
+    size = e.target.value
+    scaleN.textContent = `${size}x${size}`
 })
 
 const renderDivs = () => {

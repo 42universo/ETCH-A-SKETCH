@@ -42,3 +42,17 @@ h1{
     border: 5px solid black;
     border-radius: 50px;
 }
+
+#scaleConatiner{
+    width: 150px;
+    height: 100px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+}
+
+#scaleNumber{
+    font-size: 20px;
+}
