@@ -56,3 +56,17 @@ h1{
 #scaleNumber{
     font-size: 20px;
 }
+
+#rainbow{
+    height: 50px;
+    width: 50px;
+    border: 5px solid black;
+    border-radius: 50px;
+}
+
+#raibowImg{
+    height: 50px;
+    width: 50px;
+    object-fit: cover;
+    border-radius: 50px;
+}
